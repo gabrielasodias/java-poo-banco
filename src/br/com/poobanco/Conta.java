@@ -22,6 +22,8 @@ public class Conta {
 	 */
 	double saldo;
 	
+	Cliente cliente = new Cliente();
+	
 	public Conta() {
 		
 	}
