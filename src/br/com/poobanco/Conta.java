@@ -1,26 +1,33 @@
 package br.com.poobanco;
 
+import java.io.Serializable;
+
 /**
  * Classe que abstrai uma conta bancária
  * @author gabrieladias
  * @version 1.0
  */
-public class Conta {
+public class Conta implements Serializable {
+	/**
+	 * 
+	 */
 	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Número da conta
 	 */
-	int numero;
+	private int numero;
 	
 	/**
 	 * Número da agência
 	 */
-	int agencia;
+	private int agencia;
 	
 	/**
 	 * Saldo da conta
 	 */
-	double saldo;
+	private double saldo;
 	
 	Cliente cliente = new Cliente();
 	
@@ -34,6 +41,23 @@ public class Conta {
 		this.saldo = saldo;
 	}
 	
+	
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+
 	/**
 	 * Deposita um valor ao saldo da conta
 	 * @param valor Valor a ser depositado
@@ -45,6 +69,7 @@ public class Conta {
 	/**
 	 * Retira um valor do saldo da conta
 	 * @param valor Valor a ser retirado
+	 * @see depositar
 	 */
 	public void retirar(double valor) {
 		this.saldo -= valor;
@@ -54,7 +79,7 @@ public class Conta {
 	 * Verifica o saldo da conta
 	 * @return Valor do saldo da conta
 	 */
-	public double verificarSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
 }

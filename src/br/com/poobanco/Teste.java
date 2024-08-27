@@ -4,32 +4,19 @@ public class Teste {
 
 	public static void main(String[] args) {
 		
-		Conta cc = new Conta();
-		cc.saldo = 50;
-		cc.agencia = 123;
-		cc.numero = 323;
+		Conta corrente = new Conta();
+		corrente.depositar(35.0);
+		corrente.setAgencia(123);
+		corrente.setNumero(323);
 		
-		cc.depositar(100);
+		corrente.depositar(1000);
+		 
+		System.out.println(corrente.getSaldo());
 		
-		cc.cliente.nome = "Gabriela";
-		cc.cliente.idade = 19;
+		Conta poupanca = new Conta(312, 213, 234);
+		poupanca.retirar(45);
 		
-		System.out.println(cc.cliente.nome);
-		System.out.println(cc.cliente.idade);
-		System.out.println(cc.verificarSaldo());
+		System.out.println(poupanca.getSaldo());
 		
-		Conta poupanca = new Conta(111, 222, 1000);
-		
-		poupanca.cliente.nome = "Luiz";
-		poupanca.cliente.idade = 45;
-		
-		System.out.println(poupanca.cliente.nome);
-		System.out.println(poupanca.cliente.idade);
-		
-		poupanca.retirar(50);
-		
-		System.out.println(poupanca.verificarSaldo());
-		
-	
 	}
 }
